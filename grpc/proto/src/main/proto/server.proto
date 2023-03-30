@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "ru.otus.grpc.proto";
+
+package service;
+
+service Service {
+  rpc Generate (Task) returns (stream Result) {}
+}
+
+message Task {
+  int32 firstValue = 1;
+  int32 lastValue = 2;
+}
+
+message Result {
+  int32 value = 1;
+}
