@@ -38,7 +38,7 @@ public class ServiceImpl extends ServiceGrpc.ServiceImplBase {
         @Override
         public void run() {
             try {
-                for (int cur = start; cur < end; ++cur) {
+                for (int cur = start; cur <= end; ++cur) {
                     log.info("Next: {}", cur);
                     responseObserver.onNext(Result.newBuilder().setValue(cur).build());
                     Thread.sleep(2000);
